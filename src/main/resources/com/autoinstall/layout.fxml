@@ -20,8 +20,8 @@
    </columnConstraints>
    <rowConstraints>
       <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="329.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="337.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <VBox spacing="5.0" GridPane.rowIndex="1">
@@ -31,18 +31,25 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <CheckBox mnemonicParsing="false" text="Office 2007" />
-            <CheckBox mnemonicParsing="false" text="Ofiice 2016" />
-            <CheckBox mnemonicParsing="false" text="Winrar" />
-            <CheckBox mnemonicParsing="false" text="TightVNC" />
-            <CheckBox mnemonicParsing="false" text="Chrome" />
-            <CheckBox mnemonicParsing="false" text="Firefox" />
-            <CheckBox mnemonicParsing="false" text="Anydesk" />
-            <CheckBox mnemonicParsing="false" text="Teamviewer" />
-            <CheckBox mnemonicParsing="false" text="CutePDF" />
-            <CheckBox mnemonicParsing="false" text="LibreOffice" />
-            <CheckBox mnemonicParsing="false" text="Adobe Reader" />
-            <CheckBox mnemonicParsing="false" text="Easy Inventory" />
+            <VBox fx:id="appList" spacing="5.0">
+               <children>
+                  <CheckBox mnemonicParsing="false" text="Office 2007" />
+                  <CheckBox mnemonicParsing="false" text="Office 2016" />
+                  <CheckBox mnemonicParsing="false" text="Winrar" />
+                  <CheckBox mnemonicParsing="false" text="TightVNC" />
+                  <CheckBox mnemonicParsing="false" text="Chrome" />
+                  <CheckBox mnemonicParsing="false" text="Firefox" />
+                  <CheckBox mnemonicParsing="false" text="Anydesk" />
+                  <CheckBox mnemonicParsing="false" text="Teamviewer" />
+                  <CheckBox mnemonicParsing="false" text="CutePDF" />
+                  <CheckBox mnemonicParsing="false" text="LibreOffice" />
+                  <CheckBox mnemonicParsing="false" text="Adobe Reader" />
+                  <CheckBox mnemonicParsing="false" text="Easy Inventory" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -55,7 +62,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <ChoiceBox fx:id="presetChoiceBox" prefWidth="150.0" />
+            <ChoiceBox fx:id="presetChoiceBox" onAction="#handlePreset" prefWidth="150.0" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -68,9 +75,16 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <CheckBox mnemonicParsing="false" text="NTP" />
-            <CheckBox mnemonicParsing="false" text="Ativar Windows" />
-            <CheckBox mnemonicParsing="false" text="Energia" />
+            <VBox fx:id="configList" spacing="5.0">
+               <children>
+                  <CheckBox mnemonicParsing="false" text="NTP" />
+                  <CheckBox mnemonicParsing="false" text="Ativar Windows" />
+                  <CheckBox mnemonicParsing="false" text="Energia" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Senhas">
                <font>
                   <Font size="24.0" />
