@@ -6,11 +6,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.layout.VBox;
 
-public class layoutController {
+public class LayoutController {
     final ObservableList<String> presetList = FXCollections.observableArrayList("Windows 7", "Windows 10");
     final String[] win7AppList = {
             "Office 2007",
@@ -47,6 +49,12 @@ public class layoutController {
     private VBox appList;
 
     @FXML
+    PasswordField eiPassword;
+
+    @FXML
+    PasswordField tvPassword;
+
+    @FXML
     private void initialize() {
         presetChoiceBox.setItems(presetList);
     }
@@ -57,6 +65,16 @@ public class layoutController {
             setAppPreset(win7AppList);
         } else {
             setAppPreset(win10AppList);
+        }
+    }
+
+    @FXML
+    private void onInstallPress() {
+        if (eiPassword.getText().isEmpty() || tvPassword.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Senhas vazias");
+            alert.setHeaderText("Campo de senhas vazias, por favor informe todas as senhas.");
+            alert.showAndWait();
         }
     }
 

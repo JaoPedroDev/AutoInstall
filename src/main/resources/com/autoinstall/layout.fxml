@@ -13,7 +13,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autoinstall.layoutController">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0"
+   xmlns="http://javafx.com/javafx/20.0.1"
+   xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autoinstall.LayoutController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -77,9 +79,9 @@
             </Text>
             <VBox fx:id="configList" spacing="5.0">
                <children>
-                  <CheckBox mnemonicParsing="false" text="NTP" />
-                  <CheckBox mnemonicParsing="false" text="Ativar Windows" />
-                  <CheckBox mnemonicParsing="false" text="Energia" />
+                  <CheckBox mnemonicParsing="false" selected="true" text="NTP" />
+                  <CheckBox mnemonicParsing="false" selected="true" text="Ativar Windows" />
+                  <CheckBox mnemonicParsing="false" selected="true" text="Energia" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -105,13 +107,13 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <PasswordField GridPane.columnIndex="1" />
+                  <PasswordField fx:id="eiPassword" GridPane.columnIndex="1" />
                   <Label text="TightVNC" GridPane.rowIndex="1">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <PasswordField fx:id="tvPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </children>
@@ -119,7 +121,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </VBox>
-      <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0" text="Instalar" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <Button mnemonicParsing="false" onAction="#onInstallPress" prefHeight="39.0" prefWidth="200.0" text="Instalar" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
